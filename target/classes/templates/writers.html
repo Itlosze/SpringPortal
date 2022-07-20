@@ -1,0 +1,22 @@
+<html lang="en" layout:decorate="layouts/main" layout:decorator="layout"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title th:text="#{pageTitle}"></title>
+</head>
+<body>
+	<div layout:fragment="loginContent">
+		<h1 th:text="#{writerButton}">Writers</h1>
+		<article th:each="writer : ${writers}">
+			<header>
+				<h2 th:text="${writer.name}">This is the name</h2>
+			</header>
+			
+			<section th:utext="${writer.age + ' years old'}">
+				<p>How old are you batman?</p>
+			</section>
+
+			<hr />
+		</article>
+	</div>
+</body>
+</html>

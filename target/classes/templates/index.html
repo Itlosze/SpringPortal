@@ -1,0 +1,27 @@
+<html lang="en"	layout:decorate="layouts/main" layout:decorator="layout" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title th:text="#{pageTitle}"></title>
+</head>
+<body>
+<div layout:fragment="loginContent">
+	<h1 th:text="#{startButton}">StartPage</h1>
+	<article>
+			<header>
+				<h2 th:text="${content.title}">This is the title</h2>
+				<p th:text="${#dates.format(content.posted, 'yyyy.MM.dd HH:mm')}">Posted
+					on September 31, 2015 at 10:00 PM</p>
+			</header>
+			<section th:utext="${content.text}">
+				<p>A very interesting text...</p>
+			</section>
+			<footer>
+				<address>
+					Posted by: <span th:text="${content.writer.name}">Anonymous</span>
+				</address>
+			</footer>
+			<hr />
+		</article>
+	
+</div>
+</body>
+</html>
